@@ -167,7 +167,7 @@ c. ASDL Modem
 
 3.1.3	Antarmuka Perangkat Lunak
 Antarmuka perangkat lunak yang digunakan oleh perangkat lunak ini adalah sebagai berikut :
--
+a. API Katalog
 
 3.1.4	Antarmuka Komunikasi
 Antarmuka komunikasi yang digunakan untuk mengoperasikan perangkat lunak antara lain :
@@ -200,7 +200,7 @@ SRS-F-PR-	|Perangkat lunak dapat menyediakan mode pencarian	|Untuk memilih tanah
 		 pembeli						 terdapat pada perangkat lunak
 		 
 SRS-F-IN-	|Perangkat lunak dapat menerima masukan username	|Username dan password yang
-007		 dan password calon pembeli pembeli			 dimasukkan calon pembeli harus dapat
+007		 dan password calon pembeli			 	 dimasukkan calon pembeli harus dapat
 									 diterima oleh perangkat lunak
 									 
 SRS-F-		|Perangkat lunak dapat menampilkan katalog		|Katalog memiliki informasi ukuran tanah, kelengkapan sertifikat tanah dan lokasi
@@ -229,6 +229,10 @@ OUT-014
 SRS-F-		|Perangkat lunak dapat menampilkan informasi lokasi	|Pengguna dapat mengetahui detail lokasi tanah melalui tombol maps pada tampilan detail tanah
 OUT-015		 tanah berupa maps yang dapat di tracking dari lokasi
 		 calon pembeli
+
+SRS-F-
+OUT-016		|Perangkat lunak dapat melakukan generate laporan	|Apabila diminta oleh Kepala BPN, perangkat lunak dapat membuat laporan seputar transaksi tanah yang terjadi dalam periode tertentu
+
 
 3.2.3  Spesifikasi Proses (P-SPEC)		
 Tabel 5 Spesifikasi Proses		
@@ -293,15 +297,16 @@ Data ini diperoleh dari data store yang terkait dengan pemesanan.
 DFD-2-7.2	Admin dapat melakukan Pil_infoPemesanan untuk mendapatkan grafik dan data pemesanan produk yang berupa tabel.
 
 3.2.4	Data Store
-
 Tabel 6 Data Store
-Data Store		Deskripsi		
+Data Store		|Deskripsi		
 		
-Produk	Produk  merupakan  database  yang  menyimpan  data  produk  beserta	
-	ketersediaannya.	
-Data_katalog	Berisi data yang mengelola data katalog. Menyimpan gambar dari		
-	produk, kategori produk, nama produk dll	
-Data_pemiliktanah	Berisi deskripsi pemilik tanah yang telah melakukan registrasi. Seperti nama, no.handphone, email serta alamat pemilik tanah
+Produk			|Produk  merupakan  database  yang  menyimpan  data  produk  beserta	
+			 ketersediaannya.
+			 
+Data_katalog		|Berisi data yang mengelola data katalog. Menyimpan gambar dari		
+			 produk, kategori produk, nama produk dll	
+			 
+Data_pemiliktanah	|Berisi deskripsi pemilik tanah yang telah melakukan registrasi. Seperti nama, no.handphone, email serta alamat pemilik tanah
 	
 
 3.4	Kebutuhan Non Fungsional
@@ -309,23 +314,23 @@ Kebutuhan non fungsional yang terdapat pada perangkat lunak Tanah Kita antara la
 
 Tabel 7 Kebutuhan non fungsional
 	ID	|	Parameter	|	Kebutuhan		
-SRS-NF-OUT-016	|Availability		|Perangkat Lunak harus terus dapat beroperasi 7 hari perminggu, 24 jam per hari tanpa gagal	
+SRS-NF-OUT-017	|Availability		|Perangkat Lunak harus terus dapat beroperasi 7 hari perminggu, 24 jam per hari tanpa gagal	
 					 
-SRS-NF-OUT-017	|Ergonomy		|Tampilan antarmuka web Tanah Kita mudah dipahami user dan estetikanya bagus	
+SRS-NF-OUT-018	|Ergonomy		|Tampilan antarmuka web Tanah Kita mudah dipahami user dan estetikanya bagus	
 					 
-SRS-NF-PR-018	|Portability		|Perangkat Lunak dapat dipakai di platofrm Windows dan Linux					 	
+SRS-NF-PR-019	|Portability		|Perangkat Lunak dapat dipakai di platofrm Windows dan Linux					 	
 					 
-SRS-NF-OUT-019	|Response time		|Perangkat Lunak mampu menampilkan seluruh permintaan tidak lebih dari 10 detik	
+SRS-NF-OUT-020	|Response time		|Perangkat Lunak mampu menampilkan seluruh permintaan tidak lebih dari 10 detik	
 				
-SRS-NF-PR-020	|Security		|Perangkat lunak menggunakan standar enkripsi HTTPS pada enkripsi password
+SRS-NF-PR-021	|Security		|Perangkat lunak menggunakan standar enkripsi HTTPS pada enkripsi password
 
-SRS-NF-IN-021	Security		|Perangkat lunak menolak input pengguna yang akan
+SRS-NF-IN-022	Security		|Perangkat lunak menolak input pengguna yang akan
 					 mendaftarkan diri dengan password kurang dari 8 karakter
 		
-SRS-NF-OUT-022	|Others 1: Bahasa	|Semua tanya jawab ataupun tulisan dalam antarmuka
+SRS-NF-OUT-023	|Others 1: Bahasa	|Semua tanya jawab ataupun tulisan dalam antarmuka
 					 komunikasi disediakan dalam bahasa Indonesia dan bahasa Inggris
 		
-SRS-NF-OUT-023	|Others 2 : Tampilan	|Setiap layer harus mengandung logo BPN
+SRS-NF-OUT-024	|Others 2 : Tampilan	|Setiap layer harus mengandung logo BPN
 		 Logo Perusahaan	
 
 3.5	Batasan Perancangan
@@ -362,7 +367,7 @@ SRS-F-PR-	|Perangkat lunak dapat menyediakan mode pencarian
 006		 terhadap tanah, sesuai  dengan input dari calon pembeli
 		
 SRS-F-IN-	|Perangkat lunak dapat menerima masukan username
-007		 dan password calon pembeli pembeli	
+007		 dan password calon pembeli	
 		
 SRS-F-		|Perangkat lunak dapat menampilkan katalog
 OUT-008		
@@ -386,28 +391,31 @@ OUT-014
 	
 SRS-F-		|Perangkat lunak dapat menampilkan informasi lokasi tanah berupa maps yang dapat di tracking dari lokasi calon pembeli
 OUT-015	
+
+SRS-F-
+OUT-016		|Perangkat lunak dapat melakukan generate laporan
 	
 3.7.2	Kebutuhan Non Fungsional
 Tabel 11 Kebutuhan Non Fungsional
 ID		|	Deskripsi
-SRS-NF-OUT-016	|Perangkat Lunak harus terus dapat beroperasi 7 hari
+SRS-NF-OUT-017	|Perangkat Lunak harus terus dapat beroperasi 7 hari
 		 perminggu, 24 jam per hari tanpa gagal
 		 
-SRS-NF-OUT-017	|Tampilan antarmuka web Tanah Kita mudah
+SRS-NF-OUT-018	|Tampilan antarmuka web Tanah Kita mudah
 		 dipahami user dan estetikanya bagus
 		 
-SRS-NF-PR-018	|Perangkat Lunak dapat dipakai di platofrm Windows dan
+SRS-NF-PR-019	|Perangkat Lunak dapat dipakai di platofrm Windows dan
 		 Linux
-SRS-NF-OUT-019	|Perangkat Lunak mampu menampilkan seluruh permintaan tidak lebih dari 10 detik
+SRS-NF-OUT-020	|Perangkat Lunak mampu menampilkan seluruh permintaan tidak lebih dari 10 detik
 			
-SRS-NF-PR-020	|Perangkat lunak menggunakan standar enkripsi HTTPS pada enkripsi password	
+SRS-NF-PR-021	|Perangkat lunak menggunakan standar enkripsi HTTPS pada enkripsi password	
 
-SRS-NF-IN-021	|Perangkat lunak menolak input pengguna yang akan
+SRS-NF-IN-022	|Perangkat lunak menolak input pengguna yang akan
 		 mendaftarkan diri dengan password kurang dari 8
 		 karakter
 		
-SRS-NF-OUT-022	|Semua tanya jawab ataupun tulisan dalam antarmuka
+SRS-NF-OUT-023	|Semua tanya jawab ataupun tulisan dalam antarmuka
 		 komunikasi disediakan dalam bahasa Indonesia dan bahasa Inggris
 		
-SRS-NF-OUT-023	|Setiap layer harus mengandung logo BPN
+SRS-NF-OUT-024	|Setiap layer harus mengandung logo BPN
 
