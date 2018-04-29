@@ -234,67 +234,59 @@ SRS-F-
 OUT-016		|Perangkat lunak dapat melakukan generate laporan	|Apabila diminta oleh Kepala BPN, perangkat lunak dapat membuat laporan seputar transaksi tanah yang terjadi dalam periode tertentu
 
 
-3.2.3  Spesifikasi Proses (P-SPEC)		
-Tabel 5 Spesifikasi Proses		
-Kode buble		Deskripsi	
-DFD-0-1	Proses ini merupakan gambaran sistem secara keseluruhan. Melibatkan terminator serta data flow
-	yang keluar-masuk kedalam sistem. Buble 0 akan dideskripsikan pada DFD level selanjutnya
-	agar bisa memberikan gambaran secara lebih rinci dan spesifik.
-DFD-1-1	Terminator  yang  dapat  melakukan  pilihan  input  adalah  pembeli  dan  admin,  karena  kedua
-	terminator  ini  merupakan  pengguna  aktif  yang  dapat  berinteraksi  dengan  user.  Proses
-	mengeluarkan output sesuai dengan pilihan user, yang akan meneruskan data flow pada proses
-	yang sesuai dengan pilihan user.		
-DFD-1-2	Proses ini akan terjadi ketika user memilih menu pilihan pendaftaran. User yang belum terdaftar
-	dapat  melakukan registrasi  sehingga  data  hasil  registrasi  tersebut  akan  tersimpan  pada  data
-	pembeli		
-DFD-1-3	Pembeli yang telah terdaftar dapat melihat katalog yang disediakan dari data katalog. proses ini
-	menerima input dari data pembeli agar mampu memvalidasi apakah user yang sedang aktif
-	merupakan pembeli atau tidak. Selain itu admin dapat melakukan piihan untuk melakukan update
-	katalog. Data yang telah di update akan disimpan pada data katalog.
-DFD-1-4	Proses in menerima data flow berupa Pil_Beli dan Pil_Pencarian. Proses ini memerlukan data
-	store dan data katalog agar bsia melakukan proses pemesanan. Setelah keluar dari proses ini,
-	akan didapatkan data pesanan(mulai dari nama barang, jumlahnya, total harga dll)
-DFD-1-5	Pembeli harus melalui tahap pembayaran agar barang yang	dipesan bisa dikirimkan . Proses ini
-	menerima konfirmasi pembayaran dari bank, serta konfirmasi pengiriman dari kurir. Selain itu,
-	proses ini akan mengeluarkan data form pembayaran yang akan digunakan oleh bank, serta
-	permintaan pengiriman kepada pemasok.		
-DFD-1-6	Ketika suatu produk habis, maka software akan mengirimkan input berupa pilihan permintaan produk, sehingga terjadilah proses permintaan produk. Output dari proses ini adalah data permintaan produk.
+3.2.3  Spesifikasi Proses (P-SPEC)	
+Tabel 5 Spesifikasi Proses	
+Kode buble	|	Deskripsi
+DFD-0-1		|	Proses ini merupakan gambaran sistem secara keseluruhan. Melibatkan terminator serta data flow
+			yang keluar-masuk kedalam sistem. Bubble 0 akan dideskripsikan pada DFD level selanjutnya
+			agar bisa memberikan gambaran secara lebih rinci dan spesifik.
+			
+DFD-1-1		|	Terminator  yang  dapat  melakukan  pilihan  input  adalah  pemilik tanah  dan  admin,  karena  kedua
+			terminator  ini  merupakan  pengguna  aktif  yang  dapat  berinteraksi  dengan  user.  Proses
+			mengeluarkan output sesuai dengan pilihan user, yang akan meneruskan data flow pada proses
+			yang sesuai dengan pilihan user.
+			
+DFD-1-2		|	Proses ini akan terjadi ketika user memilih menu pilihan pendaftaran. User yang belum terdaftar
+			dapat  melakukan registrasi  sehingga  data  hasil  registrasi  tersebut  akan  tersimpan  pada  data
+			Pemilik tanah	
+			
+DFD-1-3		|	Pemilik tanah yang telah terdaftar dapat melihat katalog yang disediakan dari data katalog. proses ini
+			menerima input dari data pemilik tanah agar mampu memvalidasi apakah user yang sedang aktif
+			merupakan pemilik tanah atau tidak. Selain itu admin dapat melakukan piihan untuk melakukan update
+			katalog. Data yang telah di update akan disimpan pada data katalog.
+			
+DFD-1-4		|	Proses in menerima data flow berupa Pil_Pencarian. Proses ini memerlukan
+			data katalog agar bisa melakukan proses pencarian. Setelah keluar dari proses ini,
+			akan didapatkan data pencarian dari katalog
+			
+DFD-1-5		|	Proses ini menerima input pilihan laporan yang dikirim oleh admin, kemudian melakukan proses generate laporan 
+			sehingga admin bisa mendapatkan laporan untuk dilaporkan kepada kepala BPN.
+			
+DFD-2-2.1	|	Proses ini dibuat agar bsia memenuhi spesifikasi user requirment yang kami buat. Apabila pengguna memilih menu 
+			daftar, maka sistem akan meminta masukan kepada pemilik tanah berupa data apa saja yang dibutuhkan. 
+			Oleh karena itu output dari proses ini berupa data form yang akan diisi oleh pemilik tanah
 
-DFD-1-7	Proses ini menerima input pilihan laporan yang dikirim oleh admin, kemudian melakukan proses generate laporan sehingga admin bisa mendapatkan laporan untuk dilaporkan kepada manajer.
+DFD-2-2.2	|	Data form yang telah ditampilkan harus diisi oleh pengguna. Apabila telah tervalidasi, maka status pengguna akan 
+			naik menjadi pemilik tanah. Disini data pemilik tanah akan disimpan pada suatu data store
 
-DFD-2-2.1	Proses ini dibuat agar bsia memenuhi spesifikasi user requirment yang kami buat. Apabila pengguna memilih menu daftar, maka sistem akan meminta masukan kepada pembeli berupa data apa saja yang dibutuhkan. Oleh karena itu output dari proses ini berupa data form yang akan diisi oleh pembeli
+DFD-2-2.3	|	Apabila user telah terdaftar, maka user cukup melakukan login sebagai pemilik tanah. Proses ini merupakan proses 
+			pengecekan terhadap seorang user.
 
-DFD-2-2.2	Data form yang telah ditampilkan harus diisi oleh pengguna. Apabila telah tervalidasi, maka status pengguna akan naik menjadi pembeli. Disini data pembeli akan disimpan pada suata data store
+DFD-2-3.1 	|	Pemilik tanah dan calon pembeli dapat melihat data katalog yang tersedia 
 
-DFD-2-2.3	Apabila user telah terdaftar, maka user cukup melakukan login sebagai pembeli. Proses ini merupakan proses pengecekan terhadap seorang user.
+DFD-2-3.2 	|	Admin dan pemilik tanah dapat melakukan update pada katalog
 
-DFD-2-3.1 Pembeli dapat melihat data katalog yang tersedia DFD-2-3.2 Admin dapat melakukan update pada katalog
+DFD-2-4.1	|	Apabila calon pembeli memilih menu Pil_Pencarian, maka pembeli dapat mencari produk tanah berdasarkan 
+			kata kunci tertentu. 
 
-DFD-2-4.1	Apabila pembeli memilih menu Pil_Beli, maka pembeli dapat memilih barang yang ingin dipesan. Keluaran dari proses ini berupa data pesanan (Id barang, nama barang, jumlah serta total harga yang harus dibayarkan)
+DFD-2-4.2	|	Setelah data pencarian ditemukan, dilakukan validasi terhadap hasil pencarian tersebut. 
+			Sistem akan menampilkan data pencarian sesuai kriteria yang diinginkan calon pembeli.
 
+DFD-2-5.1	|	Untuk mengirimkan laporan ke Kepala BPN, admin memiliki hak akses untuk mencetak laporan.Data ini diperoleh 
+			dari data store yang terkait dengan transaksi. Laporan divalidasi terlebih dahulu sesuai periode yang diinginkan.
 
-DFD-2-4.2	Proses pencarian produk dapat dipilih oleh pembeli. Software akan menampilkan data produk sesuai kriteria yang diinginkan pembeli.
+DFD-2-5.2	|	Proses ini menerima data laporan yang telah valid dari proses 5.1. Pada bagian ini akan dilakukan pencetakan laporan.
 
-
-DFD-2-5.1	Proses ini transefer uang dilakukan di luar sistem. Transfer uang dalam proses ini diartikan sebagai input jumlah uang yang sesuai dengan data pemesanan.
-
-
-DFD-2-5.2	Proses ini menerima input data proses 5.1. Pada bagian ini akan dilakukan pengisian form pembayaran oleh user yang datanya akan dipakai oleh pihak bank. Proses ini juga akan mengirimkan status kelunasan pembayaran.
-
-
-DFD-2-5.3	Proses akan menerima konfirmasi_pembayaran dari Bank, apabila telah terbukti lunas, maka proses akan mengirimkan permintaan pengiriman barang pada kurir. Setelah melakukan pengiriman, kurir wajib melakukan akses ke sistem dan mengirimkan bahwa barang telah sampai pada pembeli.
-
-
-DFD-2-6.1	Ketika admin memilih pil_reqproduk, maka pada proses ini akan ditampilkan produk yang kosong.
-
-
-DFD-2-6.2	Apabila kondisi memungkinkan, admin mempunyai hak untuk melakukan pemesanan produk. Proses ini menerima input Data_Produk kosong yang dihasilkan pada proses 6.1, kemudian memberikan output data_permintaan produk
-
-DFD-2-7.1	Untuk mengirimkan laporan ke manajer, admin memiliki hak akses untuk mencetak laporan.
-Data ini diperoleh dari data store yang terkait dengan pemesanan.
-
-
-DFD-2-7.2	Admin dapat melakukan Pil_infoPemesanan untuk mendapatkan grafik dan data pemesanan produk yang berupa tabel.
 
 3.2.4	Data Store
 Tabel 6 Data Store
