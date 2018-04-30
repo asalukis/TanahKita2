@@ -332,6 +332,11 @@ a. Tampilan web dibuat dengan menggunakan photoshop dan corel draw
 b. Text editor yang digunakan adalah sublime text dan/atau notepad++ 
 c. Bahasa pemrograman yang digunakan meliputi HTML, CSS, JavaScript dan PHP
 
+3.6	Kerunutan (traceability)
+
+Suatu perangkat lunak yang baik memiliki kebutuhan fungsional yang dapat dirunut model analisisnya. Berikut ini adalah tabel yang berisi traceability dari hasil analisis kebutuhan perangkat lunak yang dibangun.
+
+
 3.7	Ringkasan Kebutuhan
 Perangkat lunak yang dibuat memiliki dua jenis kebutuhan, yaitu kebutuhan fungsional dan kebutuhan non fungsional. 
 Kebutuhan ini mencerminkan semua hal yang harus dipenuhi, dan nantinya akan menjadi arahan untuk tahapan testing, karena pada dasarnya, 
