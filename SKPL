@@ -336,6 +336,30 @@ c. Bahasa pemrograman yang digunakan meliputi HTML, CSS, JavaScript dan PHP
 
 Suatu perangkat lunak yang baik memiliki kebutuhan fungsional yang dapat dirunut model analisisnya. Berikut ini adalah tabel yang berisi traceability dari hasil analisis kebutuhan perangkat lunak yang dibangun.
 
+3.6.1	Kebutuhan Fungsional vs Proses
+
+Mapping kebutuhan fungsional dengan proses pada DFD untuk perangkat lunak Tanah Kita adalah sebagai berikut.
+
+Tabel 8 Kebutuhan Fungsional vs proses
+ID Kebutuhan Fungsional	Nomor Proses pada DFD		
+SRS-F-OUT-001	DFD-2-2.1			
+SRS-F-OUT-002	DFD-2-2.2			
+SRS-F-IN-003	DFD-2-2.3			
+SRS-F-OUT-004	DFD-2-4.2			
+SRS-F-OUT-005	DFD-2-3.1		
+SRS-F-PR-006	DFD-2-4.1			
+SRS-F-IN-007	DFD-2-2.3			
+SRS-F-OUT-008	DFD-2-3.1			
+SRS-F-IN-009	DFD-2-3.2		
+SRS-F-PR-010	DFD-2-3.2			
+SRS-F-PR-011	DFD-2-3.2			
+SRS-F-IN-012	DFD-2-3.2		
+SRS-F-OUT-013	DFD-2-3.2		
+SRS-F-OUT-014	DFD-2-4.1			
+SRS-F-OUT-015	DFD-2-3.1		
+SRS-F-OUT-016	DFD-1-5, DFD-2-5.1, DFD-2-5.2		
+
+
 
 3.7	Ringkasan Kebutuhan
 Perangkat lunak yang dibuat memiliki dua jenis kebutuhan, yaitu kebutuhan fungsional dan kebutuhan non fungsional. 
