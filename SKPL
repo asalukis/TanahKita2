@@ -359,7 +359,17 @@ SRS-F-OUT-014	DFD-2-4.1
 SRS-F-OUT-015	DFD-2-3.1		
 SRS-F-OUT-016	DFD-1-5, DFD-2-5.1, DFD-2-5.2		
 
+3.6.2	Data Store vs E-R
 
+Mapping data store pada DFD dengan Entity –Relasi untuk perangkat lunak Super Monster Mall adalah sebagai berikut :
+
+Tabel 9 Data Store vs E-R
+Data Store		Entity			Relasi
+		
+Data_pemiliktanah	Pemilik Tanah		-
+Produk			Produk, Kategori	pemilik_produk, dalam_kategori
+Data_katalog		Produk, Kategori	pemilik_produk, dalam_kategori
+		
 
 3.7	Ringkasan Kebutuhan
 Perangkat lunak yang dibuat memiliki dua jenis kebutuhan, yaitu kebutuhan fungsional dan kebutuhan non fungsional. 
